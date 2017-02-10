@@ -8,12 +8,20 @@ namespace EmployeeList.Models
 {
     public class Employee
     {
-        private enum JobType
+        public enum JobType
         {
             CEO,
-            BusinessAnalyst
+
+            [EnumMember(Value = "Business Analyst")]
+            BusinessAnalyst,
+            Developer,
+            QA
         }
         public string Name { get; set; }
+        public JobType JobTitle { get; set; }
+        public DateTime EmploymentDate { get; set; }
+        public int Rate { get; set; }
+
 
     }
 }
