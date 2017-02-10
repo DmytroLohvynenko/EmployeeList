@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201702101128507_AddNullableRateToEmployee.Designer.cs">
       <DependentUpon>201702101128507_AddNullableRateToEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702101228506_ChangeRateToDecimal.cs" />
+    <Compile Include="Migrations\201702101228506_ChangeRateToDecimal.Designer.cs">
+      <DependentUpon>201702101228506_ChangeRateToDecimal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -269,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702101128507_AddNullableRateToEmployee.resx">
       <DependentUpon>201702101128507_AddNullableRateToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702101228506_ChangeRateToDecimal.resx">
+      <DependentUpon>201702101228506_ChangeRateToDecimal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

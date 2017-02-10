@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
@@ -32,8 +33,8 @@ namespace EmployeeList.Models
         [DataType(DataType.Date)]
         [Display(Name = "Employment Date")]
         public DateTime EmploymentDate { get; set; }
-        
+
         [DataType(DataType.Currency)]
-        public int? Rate { get; set; }
+        public decimal? Rate { get; set; }
     }
 }
