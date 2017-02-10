@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -13,12 +12,18 @@ namespace EmployeeList.Models
         {
             CEO,
 
-            [EnumMember(Value = "Business Analyst")]
+            [Display(Name = "Business Analyst")]
             BusinessAnalyst,
             Developer,
             QA
         }
+
+        public int EmployeeID { get; set; }
+
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
+
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Display(Name = "Job title")]
@@ -29,8 +34,6 @@ namespace EmployeeList.Models
         public DateTime EmploymentDate { get; set; }
         
         [DataType(DataType.Currency)]
-        public int Rate { get; set; }
-
-
+        public int? Rate { get; set; }
     }
 }

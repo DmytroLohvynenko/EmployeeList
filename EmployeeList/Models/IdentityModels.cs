@@ -29,5 +29,7 @@ namespace EmployeeList.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<EmployeeList.Models.Employee> Employees { get; set; }
     }
 }
