@@ -41,8 +41,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.Rate)
         </td>
-        <td>            
-            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeID })
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeID }, new { onclick = "return confirm('Are you sure?')" })
         </td>
     </tr>
 }

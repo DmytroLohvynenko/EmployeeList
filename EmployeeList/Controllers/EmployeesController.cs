@@ -90,13 +90,14 @@ namespace EmployeeList.Controllers
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            db.Employees.Remove(employee);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
-        // POST: Employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int? id)
         {
             Employee employee = db.Employees.Find(id);
             db.Employees.Remove(employee);
