@@ -129,6 +129,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702111558469_InitalSeeding.cs" />
+    <Compile Include="Migrations\201702111558469_InitalSeeding.Designer.cs">
+      <DependentUpon>201702111558469_InitalSeeding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeListOnAngularContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +152,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702111558469_InitalSeeding.resx">
+      <DependentUpon>201702111558469_InitalSeeding.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
