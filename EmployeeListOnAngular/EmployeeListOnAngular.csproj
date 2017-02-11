@@ -110,6 +110,7 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\employeesControllers.js" />
+    <Content Include="Scripts\app\remoteService.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

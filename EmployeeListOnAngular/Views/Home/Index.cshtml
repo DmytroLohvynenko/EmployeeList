@@ -13,12 +13,13 @@
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/app/app.js"></script>
     <script src="~/Scripts/app/employeesControllers.js"></script>
+    <script src="~/Scripts/app/remoteService.js"></script>
 </head>
 
 <body ng-controller="employeeListController">
     <div id="employeeList">
         <div ng-repeat="empl in employees" class="employeeItem">
-            Employee {{empl.name}}
+            <a href="#/employees/{{empl.id}}">Employee {{empl.id}}</a>
         </div>
     </div>    
 </body>
