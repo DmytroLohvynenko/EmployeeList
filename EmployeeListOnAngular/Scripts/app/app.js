@@ -10,22 +10,24 @@ mainApp.constant('Constants', {
 });
 
 mainApp.config([
-    '$routeProvider',
-    function($routeProvider){
+    '$routeProvider', '$locationProvider',
+    function($routeProvider, $locationProvider){
         $routeProvider.
             when('/employees', {
                 title: 'List',
-                templateUrl: 'views/list.html',
+                templateUrl: 'scripts/app/views/list.html',
                 controller: 'employeeListController'
             }).
             when('/employees/create', {
                 title: 'Add an employee',
-                templateUrl: 'views/create.html',
+                templateUrl: 'scripts/app/views/create.html',
                 controller: 'employeeCreateController'
             }).
             otherwise({
                 redirectTo: '/employees'
             });
+
+        $locationProvider.hashPrefix('');
     }
 ]);
 

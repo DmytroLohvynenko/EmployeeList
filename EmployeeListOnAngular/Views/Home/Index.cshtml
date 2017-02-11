@@ -6,7 +6,7 @@
 
 <html ng-app="mainApp">
 <head>
-    <title ng-bind="'myApp &mdash; ' + title">myApp</title>
+    <title ng-bind="title"></title>
     <meta name="viewport" content="width=device-width" />
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/css/site.css" rel="stylesheet" />
@@ -19,46 +19,8 @@
 </head>
 
 <body ng-controller="employeeListController">
-    <div ng-view id="listView" class="container body-content">
-        <p>
-            <a href="" class="btn btn-default">Add new employee</a>
-        </p>
-        <table class="table table-striped">
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Job Title
-                </th>
-                <th>
-                    Employment Date
-                </th>
-                <th>
-                    Rate
-                </th>
-                <th>
-                    Action
-                </th>
-            </tr>
-            <tr ng-repeat="empl in employees" class="employeeItem">
-                <td>
-                    {{empl.firstName}} {{empl.lastName}}
-                </td>
-                <td>
-                    {{empl.jobTitleDescription}}
-                </td>
-                <td>
-                    {{empl.employmentDate | date:'dd/MM/yyyy'}}
-                </td>
-                <td>
-                    {{empl.rate | currency:'$'}}
-                </td>
-                <td>
-                    <a href="#/employees/{{empl.employeeId}}">Delete</a>
-                </td>
-            </tr>
-        </table>
+    <div class="container body-content">
+        <div ng-view id="listView"></div>
     </div>
 </body>
 </html>

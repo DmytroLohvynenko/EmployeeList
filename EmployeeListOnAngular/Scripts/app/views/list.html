@@ -1,10 +1,41 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
-
-</body>
-</html>
+﻿<section>
+    <p>
+        <a href="" class="btn btn-default">Add new employee</a>
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Job Title
+            </th>
+            <th>
+                Employment Date
+            </th>
+            <th>
+                Rate
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        <tr ng-repeat="empl in employees">
+            <td>
+                {{empl.firstName}} {{empl.lastName}}
+            </td>
+            <td>
+                {{empl.jobTitleDescription}}
+            </td>
+            <td>
+                {{empl.employmentDate | date:'dd/MM/yyyy'}}
+            </td>
+            <td>
+                {{empl.rate | currency:'$'}}
+            </td>
+            <td>
+                <a href="#/employees/{{empl.employeeId}}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</section>
