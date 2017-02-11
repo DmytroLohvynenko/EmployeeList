@@ -5,7 +5,6 @@ employeesCortrollers.controller('employeeListController', ['$scope', 'Employees'
     
     Employees.query(function(employeeList){
         angular.forEach(employeeList, function(empl){
-            empl.employmentDate = empl.employmentDate.slice(0,10);
             empl.jobTitleDescription = Constants.JobType[empl.jobTitle];
             employees.push(empl);
         });
