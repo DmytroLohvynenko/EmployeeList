@@ -12,13 +12,14 @@
     <link href="~/Content/css/site.css" rel="stylesheet" />
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
     <script src="~/Scripts/app/app.js"></script>
     <script src="~/Scripts/app/employeesControllers.js"></script>
     <script src="~/Scripts/app/remoteService.js"></script>
 </head>
 
 <body ng-controller="employeeListController">
-    <div id="employeeList" class="container body-content">
+    <div ng-view id="listView" class="container body-content">
         <p>
             <a href="" class="btn btn-default">Add new employee</a>
         </p>

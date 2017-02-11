@@ -1,4 +1,4 @@
-﻿var mainApp = angular.module('mainApp', ['employeesControllers', 'employeesService']);
+﻿var mainApp = angular.module('mainApp', ['ngRoute', 'employeesControllers', 'employeesService']);
 
 mainApp.constant('Constants', {
     JobType: {
@@ -8,3 +8,23 @@ mainApp.constant('Constants', {
         3: 'QA'
     }    
 });
+
+mainApp.config([
+    '$routeProvider',
+    function($routeProvider){
+        $routeProvider.
+            when('/employees', {
+                title: 'List',
+                templateUrl: 'views/list.html',
+                controller: 'employeeListController'
+            }).
+            when('/employees/create', {
+                title: 'Add an employee',
+                templateUrl: 'views/create.html',
+                controller: 'employeeCreateController'
+            }).
+            otherwise({
+                redirectTo: '/employees'
+            });
+    }
+]);
