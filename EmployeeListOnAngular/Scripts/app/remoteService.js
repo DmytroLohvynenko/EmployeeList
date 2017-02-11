@@ -2,7 +2,7 @@
 
 employeesService.factory('Employees', ['$resource',
     function($resource){
-        return $resource('all.json', {}, {
+        return $resource('/Api/Employees', {}, {
             query: {method: 'GET', params: { }, isArray: true }
         });
     }]);
