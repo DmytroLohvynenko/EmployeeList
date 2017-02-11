@@ -48,10 +48,10 @@
                     {{empl.jobTitle}}
                 </td>
                 <td>
-                    {{empl.employmentDate}}
+                    {{empl.employmentDate | date:'dd/MM/yyyy'}}
                 </td>
                 <td>
-                    {{empl.rate}}$
+                    {{empl.rate | currency:'$'}}
                 </td>
                 <td>
                     <a href="#/employees/{{empl.employeeId}}">Delete</a>
