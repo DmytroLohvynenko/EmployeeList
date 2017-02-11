@@ -109,7 +109,7 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\employeesController.js" />
+    <Content Include="Scripts\app\employeesControllers.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
