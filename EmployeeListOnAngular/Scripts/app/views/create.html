@@ -1,36 +1,41 @@
 ﻿<section>
     <form class="form-horizontal">
         <div class="form-group">
-            <label for="first-name" class="control-label col-md-2">First Name:</label>
-            <div class="col-md-10">
+            <label for="first-name" class="control-label col-sm-3 col-md-2 col-lg-2">First Name:</label>
+            <div class="col-sm-5 col-md-4 col-lg-3">
                 <input type="text" id="first-name" class="form-control" />
             </div>
         </div>
 
         <div class="form-group">
-            <label for="last-name" class="control-label col-md-2">Last Name:</label>
-            <div class="col-md-10">
+            <label for="last-name" class="control-label col-sm-3 col-md-2 col-lg-2">Last Name:</label>
+            <div class="col-sm-5 col-md-4 col-lg-3">
                 <input type="text" id="last-name" class="form-control" />
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="employment-date" class="control-label col-md-2">Employment Date</label>
-            <div class="col-md-10">
-                <input type="date" id="employment-date" class="form-control" />
+        <div class="form-group has-feedback">
+            <label for="employment-date" class="control-label col-sm-3 col-md-2 col-lg-2">Employment Date</label>
+            <div class="col-sm-5 col-md-4 col-lg-3">
+                <div class="input-group input-group-unstyled">
+                    <input type="date" id="employment-date" class="form-control" />
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </span>
+                </div>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="rate" class="control-label col-md-2">Rate</label>
-            <div class="col-md-10">
+            <label for="rate" class="control-label col-sm-3 col-md-2 col-lg-2">Rate</label>
+            <div class="col-sm-5 col-md-4 col-lg-3">
                 <input type="number" id="rate" class="form-control" />
             </div>
         </div>
 
         <div class="form-group">
-            <label for="job-title" class="control-label col-md-2">Job Title</label>
-            <div class="col-md-10">
+            <label for="job-title" class="control-label col-sm-3 col-md-2 col-lg-2">Job Title</label>
+            <div class="col-sm-5 col-md-4 col-lg-3">
                 <select id="job-title" class="form-control">
                     <option>1</option>
                     <option>2</option>
@@ -39,10 +44,10 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-1 col-md-offset-1">
+            <div class="col-md-1 col-md-offset-1 col-sm-2 col-sm-offset-1">
                 <a href="#/employees" class="btn btn-default">Back</a>
             </div>
-            <div class="col-md-10">
+            <div class="col-md-1 col-sm-2">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
