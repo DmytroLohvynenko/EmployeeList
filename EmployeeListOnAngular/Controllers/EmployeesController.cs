@@ -72,7 +72,7 @@ namespace EmployeeListOnAngular.Controllers
 
         // POST: api/Employees
         [ResponseType(typeof(Employee))]
-        public IHttpActionResult PostEmployee(Employee employee)
+        public IHttpActionResult PostEmployee([FromBody] Employee employee)
         {
             if (!ModelState.IsValid)
             {

@@ -135,6 +135,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ValidationHelper.cs" />
     <Compile Include="Migrations\201702111558469_InitalSeeding.cs" />
     <Compile Include="Migrations\201702111558469_InitalSeeding.Designer.cs">
       <DependentUpon>201702111558469_InitalSeeding.cs</DependentUpon>

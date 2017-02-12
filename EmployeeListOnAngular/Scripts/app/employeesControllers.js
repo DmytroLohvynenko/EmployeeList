@@ -13,7 +13,13 @@ employeesControllers.controller('employeeListController', ['$scope', 'Employees'
     });
 }]);
 
-employeesControllers.controller('employeeCreateController', ['$scope','Constants', function($scope, Constants){
+employeesControllers.controller('employeeCreateController', ['$scope', 'Employees', 'Constants', function($scope, Employees, Constants){
     $scope.jobTypes = Constants.JobType;
+    $scope.newEmployee = {};
+    $scope.newEmployee.employeeId = 0;
 
+    $scope.saveEmployee = function(){
+        var employees = new Employees($scope.newEmployee);
+        employees.$save();
+    };
 }]);

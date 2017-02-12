@@ -1,16 +1,17 @@
 ﻿<section>
     <form class="form-horizontal">
         <div class="form-group">
+            <input type="hidden" ng-model="newEmployee.employeeId" value="0"/>
             <label for="first-name" class="control-label col-sm-3 col-md-2 col-lg-2">First Name:</label>
             <div class="col-sm-5 col-md-4 col-lg-3">
-                <input type="text" id="first-name" class="form-control" />
+                <input type="text" id="first-name" class="form-control" ng-model="newEmployee.firstName" />
             </div>
         </div>
 
         <div class="form-group">
             <label for="last-name" class="control-label col-sm-3 col-md-2 col-lg-2">Last Name:</label>
             <div class="col-sm-5 col-md-4 col-lg-3">
-                <input type="text" id="last-name" class="form-control" />
+                <input type="text" id="last-name" class="form-control" ng-model="newEmployee.lastName" />
             </div>
         </div>
 
@@ -18,7 +19,7 @@
             <label for="employment-date" class="control-label col-sm-3 col-md-2 col-lg-2">Employment Date</label>
             <div class="col-sm-5 col-md-4 col-lg-3">
                 <div class="input-group input-group-unstyled">
-                    <input type="date" id="employment-date" class="form-control" />
+                    <input type="date" id="employment-date" class="form-control" ng-model="newEmployee.employmentDate" />
                     <span class="input-group-addon">
                         <i class="glyphicon glyphicon-calendar"></i>
                     </span>
@@ -29,14 +30,14 @@
         <div class="form-group">
             <label for="rate" class="control-label col-sm-3 col-md-2 col-lg-2">Rate</label>
             <div class="col-sm-5 col-md-4 col-lg-3">
-                <input type="number" id="rate" class="form-control" />
+                <input type="number" id="rate" class="form-control" ng-model="newEmployee.rate" />
             </div>
         </div>
 
         <div class="form-group">
             <label for="job-title" class="control-label col-sm-3 col-md-2 col-lg-2">Job Title</label>
             <div class="col-sm-5 col-md-4 col-lg-3">
-                <select id="job-title" class="form-control" ng-model="testModel">
+                <select id="job-title" class="form-control" ng-model="newEmployee.jobTitle">
                     <option ng-repeat="jobTitle in jobTypes" ng-value="jobTitle.id">{{jobTitle.name}}</option>
                 </select>
             </div>
@@ -47,7 +48,7 @@
                 <a href="#/employees" class="btn btn-default">Back</a>
             </div>
             <div class="col-md-1 col-sm-2">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <button ng-click="saveEmployee()" class="btn btn-default" >Save</button>
             </div>
         </div>
     </form>
