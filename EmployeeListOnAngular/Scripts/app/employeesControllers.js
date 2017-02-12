@@ -1,24 +1,19 @@
 ﻿var employeesControllers = angular.module('employeesControllers', []);
 
 employeesControllers.controller('employeeListController', ['$scope', '$route', 'Employees', 'Employee', 'Constants', function($scope, $route, Employees, Employee, Constants){
-    
-    var queryEmployees = function(){
-        var employees = [];    
-        Employees.query(function(employeeList){
-            angular.forEach(employeeList, function(empl){
-                empl.jobTitleDescription = Constants.JobType[empl.jobTitle].name;
-                employees.push(empl);
-            });
-
-            $scope.employees = employees;
+    var employees = [];    
+    Employees.query(function(employeeList){
+        angular.forEach(employeeList, function(empl){
+            empl.jobTitleDescription = Constants.JobType[empl.jobTitle].name;
+            employees.push(empl);
         });
-    };
-    queryEmployees();    
+
+        $scope.employees = employees;
+    });
 
     $scope.removeEmployee = function(employeeId){
-        Employee.remove({id:employeeId});
-        queryEmployees();
-        $route.reload();      
+        Employee.remove({id:employeeId});        
+        $route.reload();
     }
 }]);
 
