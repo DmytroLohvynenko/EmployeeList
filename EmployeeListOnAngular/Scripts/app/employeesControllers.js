@@ -5,7 +5,7 @@ employeesControllers.controller('employeeListController', ['$scope', 'Employees'
     
     Employees.query(function(employeeList){
         angular.forEach(employeeList, function(empl){
-            empl.jobTitleDescription = Constants.JobType[empl.jobTitle];
+            empl.jobTitleDescription = Constants.JobType[empl.jobTitle].name;
             employees.push(empl);
         });
 

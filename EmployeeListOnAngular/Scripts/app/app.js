@@ -1,38 +1,38 @@
-﻿var mainApp = angular.module('mainApp', ['ngRoute', 'employeesControllers', 'employeesService']);
+﻿var mainApp = angular.module( 'mainApp',['ngRoute','employeesControllers','employeesService'] );
 
-mainApp.constant('Constants', {
-    JobType: {
-        0: 'CEO',
-        1: 'Business Analyst',
-        2: 'Developer',
-        3: 'QA'
-    }    
-});
+mainApp.constant( 'Constants',{
+    JobType: [
+        { id: 0, name: 'CEO' },
+        { id: 1, name: 'Business Analyst' },
+        { id: 2, name: 'Developer' },
+        { id: 3, name: 'QA' }
+    ]
+} );
 
-mainApp.config([
-    '$routeProvider', '$locationProvider',
-    function($routeProvider, $locationProvider){
+mainApp.config( [
+    '$routeProvider','$locationProvider',
+    function( $routeProvider,$locationProvider ) {
         $routeProvider.
-            when('/employees', {
+            when( '/employees',{
                 title: 'List',
                 templateUrl: 'scripts/app/views/list.html',
                 controller: 'employeeListController'
-            }).
-            when('/employees/create', {
+            } ).
+            when( '/employees/create',{
                 title: 'Add an employee',
                 templateUrl: 'scripts/app/views/create.html',
                 controller: 'employeeCreateController'
-            }).
-            otherwise({
+            } ).
+            otherwise( {
                 redirectTo: '/employees'
-            });
+            } );
 
-        $locationProvider.hashPrefix('');
+        $locationProvider.hashPrefix( '' );
     }
-]);
+] );
 
-mainApp.run(['$rootScope', function($rootScope){
-    $rootScope.$on('$routeChangeSuccess', function(event, current, previous){
+mainApp.run( ['$rootScope',function( $rootScope ) {
+    $rootScope.$on( '$routeChangeSuccess',function( event,current,previous ) {
         $rootScope.title = current.$$route.title;
-    });
-}]);
+    } );
+}] );
