@@ -1,8 +1,7 @@
 namespace EmployeeListOnAngular.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class InitalSeeding : DbMigration
     {
         public override void Up()
