@@ -37,8 +37,7 @@
             <label for="job-title" class="control-label col-sm-3 col-md-2 col-lg-2">Job Title</label>
             <div class="col-sm-5 col-md-4 col-lg-3">
                 <select id="job-title" class="form-control">
-                    <option>1</option>
-                    <option>2</option>
+                    <option ng-repeat="jobTitle in jobTypes">{{jobTitle}}</option>                    
                 </select>
             </div>
         </div>
