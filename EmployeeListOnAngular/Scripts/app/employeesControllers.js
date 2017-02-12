@@ -1,6 +1,6 @@
 ﻿var employeesControllers = angular.module('employeesControllers', []);
 
-employeesControllers.controller('employeeListController', ['$scope', 'Employees', 'Constants', function($scope, Employees, Constants){
+employeesControllers.controller('employeeListController', ['$scope', 'Employees', 'Employee', 'Constants', function($scope, Employees, Employee, Constants){
     var employees = [];
     
     Employees.query(function(employeeList){
@@ -11,6 +11,11 @@ employeesControllers.controller('employeeListController', ['$scope', 'Employees'
 
         $scope.employees = employees;
     });
+
+    $scope.removeEmployee = function(employeeId){
+        Employee.remove({id:employeeId});
+    }
+
 }]);
 
 employeesControllers.controller('employeeCreateController', ['$scope', 'Employees', 'Constants', function($scope, Employees, Constants){
