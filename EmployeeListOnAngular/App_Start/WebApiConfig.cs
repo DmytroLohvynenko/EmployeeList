@@ -11,7 +11,6 @@ namespace EmployeeListOnAngular
             var formatter = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
             formatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             formatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
-            //GlobalConfiguration.Configuration.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;
 
             config.MapHttpAttributeRoutes();
 
