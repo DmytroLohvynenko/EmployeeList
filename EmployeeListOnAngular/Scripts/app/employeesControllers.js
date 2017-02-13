@@ -13,9 +13,11 @@ employeesControllers.controller('employeeListController', ['$scope', '$route', '
 
     $scope.removeEmployee = function(employeeId){
         if(confirm('You going to delete employee. Continue?')){
-            Employee.remove({id:employeeId});        
-            $route.reload();
-    }}
+            Employee.remove({id:employeeId}).$promise.then(function(result){
+                $route.reload();
+            });
+        };
+    };
 }]);
 
 employeesControllers.controller('employeeCreateController', ['$scope', '$route', 'Employees', 'Constants', function($scope, $route, Employees, Constants){
