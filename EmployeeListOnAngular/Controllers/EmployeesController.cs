@@ -1,7 +1,4 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Net;
+﻿using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Description;
 using EmployeeListOnAngular.Models;
@@ -12,61 +9,11 @@ namespace EmployeeListOnAngular.Controllers
     {
         private EmployeeListOnAngularContext db = new EmployeeListOnAngularContext();
 
-        // GET: api/Employees
         public IQueryable<Employee> GetEmployees()
         {
             return db.Employees;
         }
-
-        // GET: api/Employees/5
-        [ResponseType(typeof(Employee))]
-        public IHttpActionResult GetEmployee(int id)
-        {
-            Employee employee = db.Employees.Find(id);
-            if (employee == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(employee);
-        }
-
-        // PUT: api/Employees/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutEmployee(int id, Employee employee)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != employee.EmployeeId)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(employee).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!EmployeeExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        // POST: api/Employees
+        
         [ResponseType(typeof(Employee))]
         public IHttpActionResult PostEmployee([FromBody] Employee employee)
         {
@@ -81,7 +28,6 @@ namespace EmployeeListOnAngular.Controllers
             return CreatedAtRoute("DefaultApi", new { id = employee.EmployeeId }, employee);
         }
 
-        // DELETE: api/Employees/5
         [ResponseType(typeof(Employee))]
         public IHttpActionResult DeleteEmployee(int id)
         {
